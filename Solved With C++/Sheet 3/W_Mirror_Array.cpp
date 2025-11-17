@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    int n, m;
+    cin >> n >> m;
+    int matrix[n][m];
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            cin >> matrix[i][j];
+        }
+    }
+    for (int i = 0; i < n; i++)
+    {
+        int j = 0;
+        int k = m - 1;
+        while (j < k)
+        {
+            int tmp = matrix[i][j];
+            matrix[i][j] = matrix[i][k];
+            matrix[i][k] = tmp;
+            j++;
+            k--;
+        }
+    }
+    for (int i = 0; i < n; i++)
+    {
+        for (int j = 0; j < m; j++)
+        {
+            cout << matrix[i][j] << " ";
+        }
+        cout << endl;
+    }
+
+    return 0;
+}
